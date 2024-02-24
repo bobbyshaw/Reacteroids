@@ -88,10 +88,11 @@ export class Reacteroids extends Component {
     context.scale(this.state.screen.ratio, this.state.screen.ratio);
 
     // Motion trail
-    context.fillStyle = '#000';
-    context.globalAlpha = 0.4;
+
+
     context.fillRect(0, 0, this.state.screen.width, this.state.screen.height);
-    context.globalAlpha = 1;
+    context.clearRect(0, 0, this.state.screen.width, this.state.screen.width);
+
 
     // Next set of asteroids
     if(!this.asteroids.length){
@@ -224,17 +225,17 @@ export class Reacteroids extends Component {
     let message;
 
     if (this.state.currentScore <= 0) {
-      message = '0 points... So sad.';
+      message = '0 points... 😕';
     } else if (this.state.currentScore >= this.state.topScore){
-      message = 'Top score with ' + this.state.currentScore + ' points. Woo!';
+      message = 'New top score with ' + this.state.currentScore + ' points 🎉';
     } else {
-      message = this.state.currentScore + ' Points though :)'
+      message = this.state.currentScore + ' Points. Nice effort 👏'
     }
 
     if(!this.state.inGame){
       endgame = (
         <div className="endgame">
-          <p>Game over, man!</p>
+          <p>Game over!</p>
           <p>{message}</p>
           <button
             onClick={ this.startGame.bind(this) }>
