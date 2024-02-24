@@ -3,4 +3,10 @@ import { render } from 'react-dom';
 import { Reacteroids } from './Reacteroids';
 import style from './style.css';
 
-render(<Reacteroids />, document.getElementById('root'));
+
+const element = document.getElementById('asteroids');
+
+if (element) {
+  render(<Reacteroids />, document.getElementById('asteroids'));
+}
+
