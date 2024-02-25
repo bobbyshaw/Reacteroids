@@ -52,6 +52,7 @@ export class Reacteroids extends Component {
   }
 
   handleKeys(value, e){
+    e.preventDefault();
     let keys = this.state.keys;
     if(e.keyCode === KEY.LEFT   || e.keyCode === KEY.A) keys.left  = value;
     if(e.keyCode === KEY.RIGHT  || e.keyCode === KEY.D) keys.right = value;
