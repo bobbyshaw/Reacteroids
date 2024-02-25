@@ -53,10 +53,7 @@ button{
   border: 1px solid white;
   border-radius: 12px;
   color: rgb(20 31 71);
-  font-size: 20px;
-  padding: 10px 20px;
   margin: 10px;
-  font-family: 'PT Mono', serif;
   cursor: pointer;
 }
 button:hover{
