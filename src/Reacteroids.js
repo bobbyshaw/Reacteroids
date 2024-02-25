@@ -52,7 +52,6 @@ export class Reacteroids extends Component {
   }
 
   handleKeys(value, e){
-    e.preventDefault();
     let keys = this.state.keys;
     if(e.keyCode === KEY.LEFT   || e.keyCode === KEY.A) keys.left  = value;
     if(e.keyCode === KEY.RIGHT  || e.keyCode === KEY.D) keys.right = value;
@@ -61,6 +60,11 @@ export class Reacteroids extends Component {
     this.setState({
       keys : keys
     });
+
+    const blockBrowserScroll = [KEY.LEFT, KEY.RIGHT, KEY.UP, KEY.SPACE];
+    if (blockBrowserScroll.includes(e.keyCode)) {
+      e.preventDefault();
+    }
   }
 
   componentDidMount() {
